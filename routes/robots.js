@@ -12,4 +12,8 @@ router.get('/', function(req, res, next) {
   });
 });
 
+router.get<('/delete/:robotName', function(req, res, next) {
+  redisClient.srem("robots", req.params.robotName);
+  res.redirect('/robots');
+});
 module.exports = router;

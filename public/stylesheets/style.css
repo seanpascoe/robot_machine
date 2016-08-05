@@ -1,1 +1,10 @@
 @import 'materialize.min.css';
+
+.table {
+  margin: 50px;
+  margin-left: 80px;
+}
+
+#form {
+  margin-top: 40px;
+}
