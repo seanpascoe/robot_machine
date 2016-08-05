@@ -3,9 +3,10 @@
 <% include ./partials/head %>
   <body>
   <% include ./partials/header %>
+
   <div>
-  <form action="/robots" method="post">
-    <input type="text" name="name" placeholder="enter robot name"/>
+  <form action="/create" method="post">
+    <input type="text" name="robotName" placeholder="enter robot name"/>
     <button class="btn" type="submit">Add</button>
   </form>
 </div>

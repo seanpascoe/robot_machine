@@ -8,12 +8,16 @@
       <th>Delete</th>
     </thead>
     <tbody>
+      <% robotArray.forEach( function (robotItem) {
+        var deleteURL = "/robots/delete/" + robotItem.replace(/ /g, '%20') %>
+
       <tr>
-        <td>test</td>
-        <td>test2</td>
+        <td> <%= robotItem %> </td>
+        <td><a href=<%= deleteURL%>>Delete</a></td>
       </tr>
+      <% }); %>
     </tbody>
   </table>
-      
+
   </body>
 </html>
