@@ -5,8 +5,9 @@
   <% include ./partials/header %>
 
   <div>
-  <form action="/create" method="post" class="container" id="form">
-    <input type="text" name="robotName" placeholder="enter robot name"/>
+  <form action="/create" method="POST" class="container" id="form">
+    <input type="text" name="name" placeholder="enter robot name"/>
+    <input type="text" name="description" placeholder="enter description"/>
     <button class="btn" type="submit">Add</button>
   </form>
 </div>

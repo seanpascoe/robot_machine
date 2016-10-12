@@ -8,14 +8,20 @@
       <th>Delete</th>
     </thead>
     <tbody>
-      <% robotArray.forEach( function (robotItem) {
-        var deleteURL = "/robots/delete/" + robotItem.replace(/ /g, '%20') %>
+      <% robots.forEach( function(robot) { %>
+          <% action = '/robots/' + robot.id %>
+            <tr>
+            <td>
+              <a href=<%= action %>><%= robot.title %></a>
+            </td>
+            <td><%= robot.description %></td>
+            <td>
+              <form action=<%= action %> method='POST'>
+                <button class='btn waves-effect' type='submit'>Delete</button>
+              </form>
+            </td>
+        <% }); %>
 
-      <tr>
-        <td> <%= robotItem %> </td>
-        <td><a href=<%= deleteURL%>>Delete</a></td>
-      </tr>
-      <% }); %>
     </tbody>
   </table>
 

@@ -1,17 +1,28 @@
 var express = require('express');
 var router = express.Router();
-var redis = require('redis');
-var redisClient = redis.createClient();
+var mongoose = require('mongoose');
+var Robot = Robot.model('Robot');
 
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('create', { title: 'Create' });
+ Robot.find( function ( err, robots) {
+   res.render('robots', { robots : robots });
+ });
+});
+router.post('/', function(req, res, next) {
+  new Movie ({
+    title:req.body.name,
+    description:req.body.description,
+    updated_at: Date.now()
+  }).save (function(err, robot, count) {
+    res.redirect('/robots');
+  });
 });
 
-router.post('/', function(req, res) {
-  redisClient.sadd("robots", req.body.robotName);
-  res.redirect('/robots');
-});
+
+
+
+
 
 module.exports = router;

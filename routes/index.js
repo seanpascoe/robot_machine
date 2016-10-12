@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+var mongoose = require('mongoose');
+var Robot = Robot.model('Robot');
 
 
 /* GET home page. */
